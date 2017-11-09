@@ -12,7 +12,7 @@ class CashRegister
   end
   def apply_discount
     self.total = self.total * (1 - (self.discount/100.0))
-    self.discount == 0 ? "There is no discount to apply" : "Discount applied. Total is #{total}"
+    self.discount == 0 ? "There is no discount to apply" : "After the discount, the total comes to $#{total.to_i}"
   end
   def void_last_transaction
     self.total = self.previous_total
