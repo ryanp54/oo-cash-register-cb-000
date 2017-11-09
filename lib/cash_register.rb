@@ -16,6 +16,6 @@ class CashRegister
   end
   def void_last_transaction
     total = previous_total
-    items.pop()    
+    items.pop()
   end
 end
