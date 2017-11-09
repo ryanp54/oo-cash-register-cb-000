@@ -11,6 +11,7 @@ class CashRegister
     self.total += price * quantity
   end
   def apply_discount
+    puts (1 - (self.discount/100))
     self.total = self.total * (1 - (self.discount/100))
     self.discount == 0 ? "There is no discount to apply" : "Discount applied. Total is #{total}"
   end
