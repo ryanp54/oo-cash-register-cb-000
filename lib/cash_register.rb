@@ -6,7 +6,7 @@ class CashRegister
     @items = []
   end
   def add_item(title, price, quantity = 1)
-    self.items << title
+    quantity.times { |i| self.items << title }
     self.previous_total = self.total
     self.total += price * quantity
   end
