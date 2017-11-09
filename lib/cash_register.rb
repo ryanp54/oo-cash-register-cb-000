@@ -1,5 +1,6 @@
 class CashRegister
-  attr_accessor :total, :discount, :previous_total, :items
+  attr_accessor :total, :previous_total, :items, :previous_item_quantity
+  attr_reader :discount
   def initialize(discount = 0)
     @total = 0
     @discount = discount
@@ -7,6 +8,7 @@ class CashRegister
   end
   def add_item(title, price, quantity = 1)
     quantity.times { |i| self.items << title }
+    self.previous_item_quantity = quantity
     self.previous_total = self.total
     self.total += price * quantity
   end
@@ -16,5 +18,6 @@ class CashRegister
   end
   def void_last_transaction
     self.total = self.previous_total
+    self.previous_item_quantity.times {|i| self.items.pop()}
   end
 end
