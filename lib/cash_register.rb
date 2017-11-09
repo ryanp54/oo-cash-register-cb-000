@@ -11,11 +11,11 @@ class CashRegister
     self.total += price * quantity
   end
   def apply_discount
-    total = total * (1 - discount)
-    discount == 0 ? "No discount" : "Discount applied. Total is #{total}"
+    self.total = total * (1 - discount)
+    self.discount == 0 ? "No discount" : "Discount applied. Total is #{total}"
   end
   def void_last_transaction
-    total = previous_total
-    items.pop()
+    self.total = previous_total
+    self.items.pop()
   end
 end
