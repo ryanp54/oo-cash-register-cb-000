@@ -11,7 +11,7 @@ class CashRegister
     self.total += price * quantity
   end
   def apply_discount
-    self.total = self.total - self.discount)
+    self.total = self.total - self.discount
     self.discount == 0 ? "There is no discount to apply" : "Discount applied. Total is #{total}"
   end
   def void_last_transaction
